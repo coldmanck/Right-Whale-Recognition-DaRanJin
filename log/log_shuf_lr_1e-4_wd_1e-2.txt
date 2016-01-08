@@ -1,0 +1,36 @@
+I1217 17:45:23.767899 11700 caffe.cpp:113] Use GPU with device ID 8
+I1217 17:45:26.203588 11700 caffe.cpp:121] Starting Optimization
+I1217 17:45:26.203778 11700 solver.cpp:32] Initializing solver from parameters: 
+test_iter: 10
+test_interval: 10000
+base_lr: 0.0001
+display: 20
+max_iter: 200000
+lr_policy: "step"
+gamma: 0.96
+momentum: 0.9
+weight_decay: 0.02
+stepsize: 10000
+snapshot: 5000
+snapshot_prefix: "examples/kaggle2/googlenet/bvlc_googlenet2_shuf_lr_1e-4_wd_1e-2"
+solver_mode: GPU
+net: "examples/kaggle2/googlenet/train_val_shuffle.prototxt"
+test_initialization: false
+I1217 17:45:26.203819 11700 solver.cpp:70] Creating training net from net file: examples/kaggle2/googlenet/train_val_shuffle.prototxt
+[libprotobuf ERROR google/protobuf/text_format.cc:274] Error parsing text-format caffe.NetParameter: 21:12: Message type "caffe.DataParameter" has no field named "shuffle".
+F1217 17:45:26.204035 11700 upgrade_proto.cpp:928] Check failed: ReadProtoFromTextFile(param_file, param) Failed to parse NetParameter file: examples/kaggle2/googlenet/train_val_shuffle.prototxt
+*** Check failure stack trace: ***
+    @     0x7f62e3983dbd  google::LogMessage::Fail()
+    @     0x7f62e3985c5d  google::LogMessage::SendToLog()
+    @     0x7f62e39839ac  google::LogMessage::Flush()
+    @     0x7f62e398657e  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7f62e3d38bf7  caffe::ReadNetParamsFromTextFileOrDie()
+    @     0x7f62e3d4c44f  caffe::Solver<>::InitTrainNet()
+    @     0x7f62e3d4c8b7  caffe::Solver<>::Init()
+    @     0x7f62e3d4cca5  caffe::Solver<>::Solver()
+    @           0x40e386  caffe::SGDSolver<>::SGDSolver()
+    @           0x40e648  caffe::GetSolver<>()
+    @           0x407f73  train()
+    @           0x406028  main
+    @     0x7f62e2e9aec5  (unknown)
+    @           0x406402  (unknown)

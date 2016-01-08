@@ -1,0 +1,16 @@
+net: "examples/kaggle2/googlenet/train_val_txt_resize_rotated.prototxt"
+test_iter: 1000
+test_interval: 2500
+test_initialization: false
+display: 40
+average_loss: 40
+base_lr: 0.005
+lr_policy: "step"
+stepsize: 5000
+gamma: 0.96
+max_iter: 200000
+momentum: 0.9
+weight_decay: 0.0002
+snapshot: 2500
+snapshot_prefix: "/media/VSlab/coldmanck/fast-rcnn/caffe-fast-rcnn/examples/bvlc_googlenet_txt_lr_5e-3_resize_rotated_step_5k"
+solver_mode: GPU

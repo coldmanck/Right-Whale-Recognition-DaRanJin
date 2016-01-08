@@ -1,0 +1,37 @@
+I1229 17:22:08.469949 29339 caffe.cpp:113] Use GPU with device ID 6
+I1229 17:22:09.457170 29339 caffe.cpp:121] Starting Optimization
+I1229 17:22:09.457379 29339 solver.cpp:32] Initializing solver from parameters: 
+test_iter: 1000
+test_interval: 4000
+base_lr: 0.001
+display: 40
+max_iter: 200000
+lr_policy: "step"
+gamma: 0.96
+momentum: 0.9
+weight_decay: 0.0002
+stepsize: 320000
+snapshot: 5000
+snapshot_prefix: "examples/kaggle2/vgg16/bvlc_vgg16_lr_1e-3"
+solver_mode: GPU
+net: "examples/kaggle2/vgg16/vgg_train_val_my.prototxt"
+test_initialization: false
+average_loss: 40
+I1229 17:22:09.457418 29339 solver.cpp:70] Creating training net from net file: examples/kaggle2/vgg16/vgg_train_val_my.prototxt
+[libprotobuf ERROR google/protobuf/text_format.cc:274] Error parsing text-format caffe.NetParameter: 4:9: Expected integer or identifier.
+F1229 17:22:09.457568 29339 upgrade_proto.cpp:928] Check failed: ReadProtoFromTextFile(param_file, param) Failed to parse NetParameter file: examples/kaggle2/vgg16/vgg_train_val_my.prototxt
+*** Check failure stack trace: ***
+    @     0x7f9f7aac4dbd  google::LogMessage::Fail()
+    @     0x7f9f7aac6c5d  google::LogMessage::SendToLog()
+    @     0x7f9f7aac49ac  google::LogMessage::Flush()
+    @     0x7f9f7aac757e  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7f9f7ae79bf7  caffe::ReadNetParamsFromTextFileOrDie()
+    @     0x7f9f7ae8d44f  caffe::Solver<>::InitTrainNet()
+    @     0x7f9f7ae8d8b7  caffe::Solver<>::Init()
+    @     0x7f9f7ae8dca5  caffe::Solver<>::Solver()
+    @           0x40e386  caffe::SGDSolver<>::SGDSolver()
+    @           0x40e648  caffe::GetSolver<>()
+    @           0x407f73  train()
+    @           0x406028  main
+    @     0x7f9f79fdbec5  (unknown)
+    @           0x406402  (unknown)
