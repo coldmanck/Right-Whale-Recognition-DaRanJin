@@ -1,5 +1,5 @@
 # Right Whale Recognition 
-Data related to right whale recognition on Kaggle. Team *DaRanJin*.
+Data related to [Right Whale Recognition on Kaggle](https://www.kaggle.com/c/noaa-right-whale-recognition). Team *DaRanJin*.
 
 ## Repo structures
 - CropAndRotate: cropping tools
